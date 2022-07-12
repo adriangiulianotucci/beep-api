@@ -44,7 +44,7 @@ async function createUserToken(req, res, next) {
 
     const token = await generateToken(req, res, { user });
 
-    res.status(201).json(token);
+    return res.status(200).json(token);
   } catch (error) {
     next(error);
   }

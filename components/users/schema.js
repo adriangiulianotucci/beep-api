@@ -16,7 +16,7 @@ const userSchema = new Schema({
     trim: true,
     validate: emailValidator,
   },
-  password: { type: String, select: false },
+  password: { type: String, select: false, required: true },
   firstName: { type: String, required: true, lowercase: true, trim: true },
   lastName: { type: String, required: true, lowercase: true, trim: true },
   role: { type: ObjectId, ref: "Role", required: true },

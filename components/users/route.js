@@ -5,9 +5,11 @@ router.get("/", queryUsers);
 router.post("/", createUser);
 
 async function queryUsers(req, res) {
-  req.logger.info("Querying orders");
+  req.logger.info("Querying users");
 
-  res.status(200).send();
+  const users = await req.model("User").find({});
+
+  return res.status(200).json(users);
 }
 
 async function createUser(req, res) {
@@ -15,6 +17,25 @@ async function createUser(req, res) {
 
   if (!req.body.role) {
     req.logger.verbose("Role is a required attribute. Sending 400 to client");
+    return res.status(400).end();
+  }
+
+  if (!req.body.email) {
+    req.logger.verbose("Email is a required attribute. Sending 400 to client");
+    return res.status(400).end();
+  }
+
+  if (!req.body.firstName) {
+    req.logger.verbose(
+      "FirstName is a required attribute. Sending 400 to client"
+    );
+    return res.status(400).end();
+  }
+
+  if (!req.body.lastName) {
+    req.logger.verbose(
+      "LastName is a required attribute. Sending 400 to client"
+    );
     return res.status(400).end();
   }
 
@@ -30,7 +51,11 @@ async function createUser(req, res) {
       ...req.body,
       organization: req.user.organization,
     });
-  } catch (error) {}
+
+    return res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 module.exports = router;

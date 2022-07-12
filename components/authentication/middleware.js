@@ -1,5 +1,6 @@
 const publicKey = require("../../keys/public-key");
 const createError = require("http-errors");
+const jwt = require("jsonwebtoken");
 
 function getToken(req, next) {
   const TOKEN_REGEX = /^\s*Bearer\s+(\S+)/g;
@@ -13,7 +14,6 @@ function getToken(req, next) {
 }
 
 function authenticationMiddleware(req, res, next) {
-  console.log(req);
   if (!req.headers.authorization) {
     req.logger.warn("Missing authorization header");
     return next(new createError.Unauthorized());
@@ -26,14 +26,21 @@ function authenticationMiddleware(req, res, next) {
       issuer: req.config.auth.token.issuer,
     });
 
-    if (!user || !user._id || !user.organization) {
-      req.logger.error("Error authenticating malformed JWT");
+    if (!req.user._id || !req.user.organization) {
+      req.logger.error("Error missing user props");
       return next(new createError.Unauthorized());
     }
 
     req.logger.verbose(`User ${req.user._id} authenticated`);
+    next();
   } catch (error) {
-    req.logger.error(error);
+    req.logger.error(error.name);
+    if (
+      error.name === "TokenExpiredError" ||
+      error.name === "JsonWebTokenError"
+    ) {
+      return next(new createError.Unauthorized());
+    }
   }
 }
 
