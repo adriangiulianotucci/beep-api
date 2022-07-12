@@ -1,0 +1,30 @@
+{
+  "mongo": {
+    "db": "bar",
+    "url": "mongodb://localhost/bar"
+  },
+  "server": {
+    "url": "http://localhost:3000",
+    "maxResultsLimit": 1000
+  },
+  "logger": {
+    "console": {
+      "level": "debug",
+      "timestamp": true,
+      "handleExceptions": true,
+      "humanReadableUnhandledException": true,
+      "colorize": true
+    }
+  },
+  "cors": {
+    "whitelist": "*"
+  },
+  "auth": {
+    "token": {
+      "issuer": "adrian",
+      "algorithm": "RS256",
+      "expiresIn": "1d"
+    },
+    "key": "bar"
+  }
+}
