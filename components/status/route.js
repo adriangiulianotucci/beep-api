@@ -1,3 +1,6 @@
+const { Router } = require("express");
+const pkg = require("../../package.json");
+
 const router = new Router();
 
 router.get("/", getStatus);
@@ -5,5 +8,7 @@ router.get("/", getStatus);
 async function getStatus(req, res, next) {
   req.logger.verbose("Getting server status");
 
-  req.status(200).send();
+  res.status(200).send({ name: pkg.name, version: pkg.version });
 }
+
+module.exports = router;
