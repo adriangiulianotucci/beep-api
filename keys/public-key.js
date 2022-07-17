@@ -4,6 +4,6 @@ const config = require("config");
 
 const publicKey =
   process.env.BAR_PUB ||
-  fs.readFileSync(path.join(__dirname, `./${config.auth.key}.pub`));
+  fs.readFileSync(path.join(process.cwd(), `./${config.auth.key}.pub`));
 
 module.exports = publicKey;
