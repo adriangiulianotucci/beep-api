@@ -30,7 +30,7 @@ async function createUserToken(req, res, next) {
 
     if (!user) {
       req.logger.verbose("User not found. Sending 404 to client");
-      return res.status(401).end();
+      return res.status(404).end();
     }
 
     req.logger.verbose("Checking user password");
