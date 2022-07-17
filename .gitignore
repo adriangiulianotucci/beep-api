@@ -4,3 +4,6 @@ keys/bar.pub
 
 # Dependency directories
 node_modules/
+
+# Local Configs
+config/local.json
