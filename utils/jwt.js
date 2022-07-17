@@ -4,7 +4,6 @@ const privateKey = require("../keys/private-key");
 async function generateToken(req, res, { user }) {
   const payload = {
     _id: user._id,
-    organization: user.organization,
   };
 
   const token = jwt.sign(payload, privateKey, {

@@ -8,7 +8,6 @@ const { ObjectId } = Schema.Types;
 const emailValidator = validate({ validator: "isEmail" });
 
 const userSchema = new Schema({
-  organization: { type: ObjectId, ref: "Organization", required: true },
   email: {
     type: String,
     required: true,

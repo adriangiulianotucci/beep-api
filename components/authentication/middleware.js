@@ -26,7 +26,7 @@ function authenticationMiddleware(req, res, next) {
       issuer: req.config.auth.token.issuer,
     });
 
-    if (!req.user._id || !req.user.organization) {
+    if (!req.user._id) {
       req.logger.error("Error missing user props");
       return next(new createError.Unauthorized());
     }

@@ -49,7 +49,6 @@ async function createUser(req, res) {
 
     const user = await req.model("User").create({
       ...req.body,
-      organization: req.user.organization,
     });
 
     return res.status(200).json(user);
