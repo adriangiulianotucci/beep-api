@@ -1,3 +1,5 @@
+global.__basedir = __dirname; // TODO REVIEW
+
 const config = require("config");
 const logger = require("./logger");
 const Bar = require("./lib/bar");

@@ -25,6 +25,7 @@
       "algorithm": "RS256",
       "expiresIn": "1d"
     },
-    "key": "bar"
+    "privateKeyPath": "/keys/bar.pk",
+    "publicKeyPath": "/keys/bar.pub"
   }
 }

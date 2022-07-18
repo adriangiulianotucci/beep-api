@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const config = require("config");
 
-const publicKey = process.env.BAR_PUB || fs.readFileSync(`.././BAR_PUB`);
+const publicKeyPath = process.env.PUBLIC_KEY_PATH || config.auth.privateKeyPath;
+
+const publicKey = fs.readFileSync(__basedir + publicKeyPath);
 
 module.exports = publicKey;
