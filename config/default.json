@@ -24,8 +24,6 @@
       "issuer": "adrian",
       "algorithm": "RS256",
       "expiresIn": "1d"
-    },
-    "privateKeyPath": "/keys/bar.pk",
-    "publicKeyPath": "/keys/bar.pub"
+    }
   }
 }
