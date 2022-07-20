@@ -1,6 +1,6 @@
 # Keys
-keys/bar.pk
-keys/bar.pub
+bar.pk
+bar.pub
 
 # Dependency directories
 node_modules/
