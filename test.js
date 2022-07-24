@@ -1,0 +1,1 @@
+const CAT_APPNAME = "CAT_APPNAME";
