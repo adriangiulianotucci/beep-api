@@ -2,8 +2,8 @@ global.__basedir = __dirname; // TODO REVIEW
 
 const config = require("config");
 const logger = require("./logger");
-const Bar = require("./lib/bar");
+const Beep = require("./lib/beep");
 
-const bar = new Bar(config, logger);
+const beep = new Beep(config, logger);
 
-module.exports = bar;
+module.exports = beep;

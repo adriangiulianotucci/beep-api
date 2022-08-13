@@ -1,7 +1,7 @@
 {
   "mongo": {
-    "db": "bar",
-    "url": "mongodb://localhost/bar"
+    "db": "beep",
+    "url": "mongodb://localhost/beep"
   },
   "server": {
     "url": "http://localhost:3000",

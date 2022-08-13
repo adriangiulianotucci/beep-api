@@ -7,7 +7,7 @@ module.exports = {
       role: ObjectId("000000000000000000000000"),
       firstName: "Luke",
       lastName: "Skywalker",
-      email: "admin@bar.com",
+      email: "admin@beep.com",
       password: "$2a$10$J3Qa3YiZTxXBX7NsSXMWmeVfrnsK7GXyCQM8sQ0VpSgvULxA/DOgO",
     });
   },

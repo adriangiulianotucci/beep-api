@@ -1,9 +1,9 @@
 {
-  "name": "starter-express-mongo-api",
+  "name": "beep-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./bin/bar.js",
+    "dev": "nodemon ./bin/beep.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "migrate-mongo"
   },
@@ -29,9 +29,6 @@
     "socket.io": "^4.5.0",
     "to-camel-case": "^1.0.0",
     "winston": "^3.8.1"
-  },
-  "bin": {
-    "starter-express-mongo-api": "bin/bar.js"
   },
   "directories": {
     "lib": "lib"
