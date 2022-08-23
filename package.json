@@ -26,7 +26,7 @@
     "nodemon": "^2.0.16",
     "path": "^0.12.7",
     "require-all": "^3.0.0",
-    "socket.io": "^4.5.0",
+    "socket.io": "^4.5.1",
     "to-camel-case": "^1.0.0",
     "winston": "^3.8.1"
   },

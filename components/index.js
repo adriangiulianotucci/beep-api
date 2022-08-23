@@ -10,6 +10,7 @@ const components = requireAll({
 
 const routers = {};
 const schemas = {};
+const sockets = {};
 
 Object.keys(components).forEach((component) => {
   routers[component] = components[component].route;
